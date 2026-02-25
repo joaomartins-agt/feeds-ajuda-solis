@@ -1,0 +1,67 @@
+
+
+:root {
+  --verde: #2D6A4F;
+  --verde-claro: #52B788;
+  --verde-clarinho: #F0F7F2;
+  --verde-palido: #D8F3DC;
+  --amarelo: #f4df22;
+  --amarelo-palido: #f6f3e2;
+  --escuro: #1B1B1B;
+  --medio: #4A4A4A;
+  --suave: #8A8A8A;
+  --bg: #F7F5F0;
+  --branco: #FFFFFF;
+  --borda: #E0DDD5;
+  --vermelho: #D62828;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--escuro);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Links */
+a {
+  color: var(--verde);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Títulos */
+h1, h2, h3, h4 {
+  font-family: 'Sora', sans-serif;
+}
+/* ==========================================================
+   GRID RESPONSIVO (Categorias e Vídeos)
+   Mobile: Sempre 2 colunas
+   Desktop: Flexível (auto-fill)
+========================================================== */
+.grid-responsivo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Força 2 colunas por padrão (celular) */
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+/* Quando a tela for maior que 600px (Tablet/Desktop), muda a regra */
+@media (min-width: 600px) {
+  .grid-responsivo {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Volta a ser flexível */
+  }
+}
