@@ -131,7 +131,7 @@ export default function Home() {
           marginBottom: "28px",
           fontSize: "15px",
         }}>
-          Encontre em nossas publicações respostas para dúvidas e tutoriais para você aproveitar ao máximo o Feeds.
+          Encontre em nossas publicações respostas para você aproveitar ao máximo do Feeds
         </p>
 
         <form onSubmit={handleBusca} style={{ maxWidth: "480px", margin: "0 auto" }}>
