@@ -1,140 +1,105 @@
 # 📱 Central de Ajuda — Feeds Solis
 
-Guia completo de como rodar, editar e publicar esse projeto.
+Bem-vindo(a) ao repositório da Central de Ajuda do Solis! Este é um projeto construído em Next.js (React) focado em ser rápido, responsivo e amigável para os usuários.
+
+---
+
+## 💻 Como rodar o projeto no seu computador
+
+Se você acabou de baixar o projeto ou fechou o VS Code, siga estes passos para ver o site funcionando no seu navegador:
+
+1. Abra o terminal do VS Code.
+2. (Primeira vez apenas) Digite `npm install` para instalar as dependências.
+3. Digite `npm run dev` para ligar o servidor.
+4. Abra o navegador e acesse: `http://localhost:3000`
 
 ---
 
 ## 🗂️ Estrutura de arquivos
 
-```
+Abaixo está o mapa para você se encontrar facilmente no código:
+
 feeds-ajuda/
 │
 ├── data/
-│   └── faq.js          ← ⭐ ARQUIVO PRINCIPAL — edite aqui o conteúdo do FAQ
+│   └── faq.json        ← ⭐ ARQUIVO PRINCIPAL — edite aqui os textos, vídeos e categorias
 │
 ├── pages/
 │   ├── _app.js         ← inicialização do app (não mexa)
 │   ├── index.js        ← página inicial (home)
 │   ├── busca.js        ← página de resultados de busca
 │   └── categoria/
-│       └── [id].js     ← página de cada categoria
+│       └── [id].js     ← modelo da página de cada categoria individual
 │
 ├── components/
-│   └── Layout.js       ← header, rodapé e botão do WhatsApp
+│   └── Layout.js       ← header, rodapé e configurações globais do site
 │
 ├── styles/
-│   └── globals.css     ← cores e fontes globais
+│   └── globals.css     ← cores, grids e fontes globais
 │
 ├── package.json        ← dependências do projeto
 └── next.config.js      ← configuração do Next.js
-```
 
 
 ---
 
-## ✏️ Como adicionar uma nova pergunta
+## ✏️ Como editar ou adicionar conteúdo
 
-Abra o arquivo `data/faq.js` e encontre a categoria onde a pergunta se encaixa.  
-Dentro do array `perguntas`, adicione um novo objeto:
+Todo o conteúdo de texto do site vive dentro do arquivo **`data/faq.json`**. Como é um arquivo JSON, lembre-se de usar **aspas duplas** em tudo e não esquecer das vírgulas separando os itens.
 
-```js
+### 🪄 Dica de formatação (Negrito)
+Em qualquer lugar do texto (respostas, passos, conclusões), você pode colocar palavras em **negrito** colocando dois asteriscos em volta delas.
+Exemplo: `"Abra o aplicativo **Solis** e clique em **Entrar**"`
+
+### Como adicionar uma nova pergunta
+Encontre a categoria onde a pergunta se encaixa no `faq.json` e adicione um novo bloco como este dentro da lista de `"perguntas"`:
+
 {
-  id: "minha-nova-pergunta",      // ← único, sem espaços ou acentos
-  pergunta: "Como fazer X?",
-  resposta: "Para fazer X, você deve...",
-
-  // OPCIONAL: lista com bullets
-  lista: [
-    "Primeiro item",
-    "Segundo item",
-  ],
-
-  // OPCIONAL: passos numerados
-  passos: [
+  "id": "minha-nova-pergunta",
+  "pergunta": "Como fazer X?",
+  "resposta": "Para fazer X, você deve seguir estes passos.",
+  "introPassos": "Siga o passo a passo abaixo:",
+  "passos": [
     "Passo 1: faça isso",
-    "Passo 2: depois isso",
+    "Passo 2: depois isso"
   ],
-
-  // OPCIONAL: caixa de atenção amarela
-  dica: "Atenção: lembre-se de salvar antes de sair.",
+  "dica": "Lembre-se de salvar antes de sair."
 }
-```
 
-Você pode usar `lista`, `passos` e `dica` separados ou combinados.
+Você pode usar os campos `"resposta"`, `"lista"`, `"passos"`, `"conclusao"`, `"importante"` e `"dica"` juntos ou separados, o site vai se adaptar automaticamente ao que você preencher.
 
----
+### Como adicionar uma nova categoria
+Adicione um novo bloco no array `"categorias"`:
 
-## ➕ Como adicionar uma nova categoria
-
-No arquivo `data/faq.js`, adicione um novo objeto no array `categorias`:
-
-```js
 {
-  id: "nova-categoria",     // ← sem espaços ou acentos
-  emoji: "⭐",
-  titulo: "Nome da Categoria",
-  perguntas: [
-    // suas perguntas aqui
-  ],
-},
-```
-
-A nova categoria vai aparecer automaticamente no grid da home e ter sua própria página em `/categoria/nova-categoria`.
-
----
-
-## 🔧 Como mudar o número do WhatsApp
-
-Abra `data/faq.js` e vá até o final do arquivo. Edite:
-
-```js
-export const config = {
-  whatsappNumero: "5511999999999", // ← só números, com DDI e DDD
-  whatsappMensagem: "Olá! Preciso de ajuda com o Feeds do Solis.",
-  // ...
-};
-```
-
----
-
-## 🎨 Como mudar as cores
-
-Abra `styles/globals.css` e edite as variáveis no topo:
-
-```css
-:root {
-  --verde: #2D6A4F;         /* cor principal */
-  --verde-claro: #52B788;   /* destaque e hover */
-  --amarelo: #F4A522;       /* botão de ação */
+  "id": "nova-categoria",
+  "emoji": "/icones/seu-icone.png",
+  "titulo": "Nome da Categoria",
+  "perguntas": [
+    ...
+  ]
 }
-```
+
+A nova categoria vai aparecer automaticamente na tela inicial e a página dela será gerada sozinha.
 
 ---
 
-## 🌐 Como publicar no Vercel
+## 🚀 Como publicar as atualizações no site oficial (Vercel)
 
-1. Crie uma conta grátis em https://vercel.com
-2. Instale o Git e suba o projeto para o GitHub
-3. No Vercel, clique em "Add New Project" e conecte o repositório
-4. Clique em "Deploy" — o Vercel faz tudo automaticamente
+O site está conectado à Vercel. Isso significa que qualquer alteração enviada para o GitHub entra no ar automaticamente em cerca de 1 a 2 minutos.
 
-Para conectar um domínio próprio (ex: `ajuda.seudominio.com.br`):
-1. No painel do Vercel, vá em Settings → Domains
-2. Adicione seu domínio
-3. No seu provedor de domínio, crie um registro **CNAME** apontando para `cname.vercel-dns.com`
+**Pelo VS Code:**
+1. Clique no ícone de **Controle do Código-Fonte** na barra lateral esquerda (ou aperte `Cmd + Shift + G`).
+2. Passe o mouse sobre "Changes" (Alterações) e clique no botão **`+`** para preparar os arquivos.
+3. Na caixa "Message" (Mensagem), digite o que você mudou (Ex: "Adicionei a pergunta X").
+4. Clique em **Commit**.
+5. Clique no botão azul **Sync Changes** (Sincronizar Alterações).
+6. Pronto! A Vercel fará o resto.
 
 ---
 
-## ❓ Perguntas frequentes de desenvolvimento
+## ❓ Dúvidas da Estrutura
 
-**P: Preciso rodar `npm install` toda vez?**  
-R: Não. Só na primeira vez ou quando alguém adicionar uma dependência nova ao `package.json`.
+**P: O que é o `[id].js` na pasta de categoria?** R: É uma rota dinâmica do Next.js. O `[id]` vira a parte variável da URL (ex: `/categoria/conta`, `/categoria/postagem`). Um único arquivo inteligente serve para exibir todas as categorias do site.
 
-**P: Como vejo as mudanças em tempo real?**  
-R: Com `npm run dev` rodando, qualquer mudança nos arquivos aparece automaticamente no navegador.
-
-**P: O que é o `[id]` na pasta de categoria?**  
-R: É uma rota dinâmica do Next.js. O `[id]` vira a parte variável da URL — `/categoria/conta`, `/categoria/postagem` etc. Um único arquivo serve para todas as categorias.
-
-**P: Posso editar o HTML das páginas?**  
-R: Sim! Os arquivos em `pages/` são componentes React, que parece muito com HTML. Qualquer coisa dentro de `return (...)` é o que aparece na tela.
+**P: Posso editar o design das páginas?** R: Sim! Os arquivos na pasta `pages/` usam React (JSX), que parece muito com HTML. A estrutura visual da página fica dentro do `return (...)` de cada arquivo.
