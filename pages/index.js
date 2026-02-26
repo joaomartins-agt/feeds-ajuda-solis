@@ -115,9 +115,33 @@ export default function Home() {
       {/* ── HERO com busca ── */}
       <div style={{
         background: "url('/cenario.png') center/cover no-repeat",
-        padding: "48px 20px 56px",
+        padding: "20px 20px 56px", /* 👈 Diminuí o espaço do topo de 48px para 20px para acomodar o link */
         textAlign: "center",
       }}>
+        
+        {/* 👇 NOVO: Link Voltar ao Feeds */}
+        <div style={{ textAlign: "left", marginBottom: "20px" }}>
+          <a 
+            href="https://solisapp.org" 
+            style={{
+              color: "var(--escuro)",
+              textDecoration: "underline",
+              fontFamily: "Arial, sans-serif",
+              fontSize: "12px",
+              fontWeight: 500,
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "4px",
+              opacity: 0.7, /* Deixa o link mais clarinho e sutil */
+              transition: "opacity 0.2s" /* Animação suave */
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
+            onMouseLeave={(e) => e.currentTarget.style.opacity = 0.7}
+          >
+            ‹ voltar ao Feeds
+          </a>
+        </div>
+
         <h1 style={{
           fontFamily: "Sora, sans-serif",
           fontSize: "clamp(22px, 5vw, 32px)",
