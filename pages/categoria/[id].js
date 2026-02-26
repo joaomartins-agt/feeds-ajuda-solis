@@ -19,13 +19,13 @@ function Texto({ children }) {
   if (!children) return null;
   const partes = children.split(/\*\*(.*?)\*\*/g);
   return (
-    <>
+    <span>
       {partes.map((parte, i) =>
         i % 2 === 1
           ? <strong key={i}>{parte}</strong>
           : parte
       )}
-    </>
+    </span>
   );
 }
 
