@@ -24,7 +24,7 @@ function todasAsPerguntas() {
         categoriaTitulo: cat.titulo,
         categoriaEmoji: cat.emoji,
         // "texto" junta pergunta + resposta pra busca ser mais abrangente
-        texto: `${perg.pergunta} ${perg.resposta || ""} ${(perg.lista || []).join(" ")} ${(perg.passos || []).join(" ")}`,
+        texto: `${perg.pergunta} ${perg.resposta || ""} ${(perg.lista || []).join(" ")} ${(perg.passos || []).join(" ")}`.replace(/\*\*/g, ""),
       });
     });
   });
@@ -179,7 +179,7 @@ export default function BuscaPagina() {
                 {perg.pergunta}
               </div>
               {/* Preview da resposta */}
-              {perg.resposta && (
+              {(perg.resposta || perg.introPassos || (perg.passos && perg.passos[0])) && (
                 <div style={{
                   fontSize: "13px",
                   color: "var(--suave)",
@@ -188,7 +188,8 @@ export default function BuscaPagina() {
                   WebkitLineClamp: 2,
                   WebkitBoxOrient: "vertical",
                 }}>
-                  {perg.resposta}
+                  {/* Puxa a resposta, ou a intro, ou o primeiro passo, e tira os negritos */}
+                  {(perg.resposta || perg.introPassos || perg.passos[0]).replace(/\*\*/g, "")}
                 </div>
               )}
             </div>

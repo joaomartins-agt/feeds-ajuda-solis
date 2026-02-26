@@ -65,3 +65,20 @@ h1, h2, h3, h4 {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Volta a ser flexível */
   }
 }
+
+/* ==========================================================
+   GRID CATEGORIAS E VÍDEOS
+   Mobile: 2 colunas | Desktop: 4 colunas
+========================================================== */
+.grid-4-colunas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Sempre 2 colunas no celular */
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 650px) {
+  .grid-4-colunas {
+    grid-template-columns: repeat(4, 1fr); /* Trava em 4 colunas no computador */
+  }
+}

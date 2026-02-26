@@ -3,7 +3,7 @@
 // Arquivo: pages/categoria/[id].js
 // ============================================================
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Layout from "../../components/Layout";
 import faqData from "../../data/faq.json";
@@ -44,6 +44,21 @@ export async function getStaticProps({ params }) {
 function PerguntaItem({ pergunta }) {
   const [aberto, setAberto] = useState(false);
 
+  // 👇 NOVO: Verifica se a URL mandou abrir essa pergunta específica
+  useEffect(() => {
+    if (window.location.hash === `#${pergunta.id}`) {
+      setAberto(true); // Abre a sanfona automaticamente
+      
+      // Dá um tempinho mínimo para a sanfona abrir e depois rola a tela até ela
+      setTimeout(() => {
+        const elemento = document.getElementById(pergunta.id);
+        if (elemento) {
+          elemento.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 300);
+    }
+  }, [pergunta.id]);
+  
   return (
     <div
       id={pergunta.id}
@@ -121,7 +136,7 @@ function PerguntaItem({ pergunta }) {
                   lineHeight: 1.5,
                 }}>
                   <span style={{ color: "var(--verde)", fontWeight: 700, flexShrink: 0 }}>•</span>
-                  <Texto>{item}</Texto>
+                  <div><Texto>{item}</Texto></div>
                 </li>
               ))}
             </ul>
@@ -164,7 +179,7 @@ function PerguntaItem({ pergunta }) {
                   }}>
                     {i + 1}
                   </span>
-                  <Texto>{passo}</Texto>
+                  <div><Texto>{passo}</Texto></div>
                 </li>
               ))}
             </ol>
@@ -205,7 +220,7 @@ function PerguntaItem({ pergunta }) {
                     padding: "3px 0", lineHeight: 1.5,
                   }}>
                     <span style={{ color: "var(--amarelo)", flexShrink: 0, fontWeight: 700 }}>•</span>
-                    <Texto>{item}</Texto>
+                    <div><Texto>{item}</Texto></div>
                   </li>
                 ))}
               </ul>
@@ -226,7 +241,7 @@ function PerguntaItem({ pergunta }) {
               gap: "10px",
             }}>
               <span style={{ flexShrink: 0 }}>⚠️</span>
-              <Texto>{pergunta.dica}</Texto>
+              <div><Texto>{pergunta.dica}</Texto></div>
             </div>
           )}
 

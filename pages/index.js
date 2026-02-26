@@ -16,6 +16,7 @@ function VideoCard({ video }) {
 
   return (
     <div style={{
+      height: "100%", /* 👈 Altura travada para alinhar com os outros cards */
       background: "var(--branco)",
       border: "1px solid var(--borda)",
       borderRadius: "10px",
@@ -191,15 +192,11 @@ export default function Home() {
           Categorias
         </h2>
 
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))",
-          gap: "12px",
-          marginBottom: "48px",
-        }}>
+        <div className="grid-4-colunas"> {/* 👈 Nova classe aplicada aqui! */}
           {categorias.map((cat) => (
-            <Link key={cat.id} href={`/categoria/${cat.id}`} style={{ textDecoration: "none" }}>
+            <Link key={cat.id} href={`/categoria/${cat.id}`} style={{ textDecoration: "none", display: "block" }}> {/* 👈 Adicionado display: "block" */}
               <div style={{
+                height: "100%", /* 👈 Altura travada para alinhar com os outros cards */
                 background: "var(--branco)",
                 border: "1px solid var(--borda)",
                 borderRadius: "10px",
@@ -308,12 +305,7 @@ export default function Home() {
           Vídeos que podem te ajudar
         </h2>
 
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))",
-          gap: "12px",
-          marginBottom: "48px",
-        }}>
+        <div className="grid-4-colunas"> {/* 👈 Nova classe aplicada aqui também! */}
           {faqData.videos.map((video) => (
             <VideoCard key={video.id} video={video} />
           ))}
