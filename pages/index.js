@@ -16,7 +16,7 @@ function VideoCard({ video }) {
 
   return (
     <div style={{
-      height: "100%", /* 👈 Altura travada para alinhar com os outros cards */
+      height: "100%",
       background: "var(--branco)",
       border: "1px solid var(--borda)",
       borderRadius: "10px",
@@ -32,7 +32,6 @@ function VideoCard({ video }) {
         e.currentTarget.style.boxShadow = "none";
       }}
     >
-      {/* Se clicou em tocar, mostra o player do Youtube. Se não, mostra a imagem. */}
       {tocando ? (
         <iframe
           width="100%"
@@ -73,7 +72,6 @@ function VideoCard({ video }) {
         </div>
       )}
       
-      {/* Título do vídeo ajustado */}
       <div style={{ padding: "10px 12px", height: "48px" }}>
         <p style={{
           fontFamily: "Sora, sans-serif",
@@ -115,11 +113,11 @@ export default function Home() {
       {/* ── HERO com busca ── */}
       <div style={{
         background: "url('/cenario.png') center/cover no-repeat",
-        padding: "20px 20px 56px", /* 👈 Diminuí o espaço do topo de 48px para 20px para acomodar o link */
+        padding: "20px 20px 56px",
         textAlign: "center",
       }}>
         
-        {/* 👇 NOVO: Link Voltar ao Feeds */}
+        {/* Link Voltar ao Feeds */}
         <div style={{ textAlign: "left", marginBottom: "20px" }}>
           <a 
             href="https://solisapp.org" 
@@ -132,8 +130,8 @@ export default function Home() {
               display: "inline-flex",
               alignItems: "center",
               gap: "4px",
-              opacity: 0.7, /* Deixa o link mais clarinho e sutil */
-              transition: "opacity 0.2s" /* Animação suave */
+              opacity: 0.7,
+              transition: "opacity 0.2s"
             }}
             onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
             onMouseLeave={(e) => e.currentTarget.style.opacity = 0.7}
@@ -156,14 +154,14 @@ export default function Home() {
           marginBottom: "28px",
           fontSize: "15px",
         }}>
-          Encontre em nossas publicações respostas para você aproveitar ao máximo do Feeds
+          Encontre abaixo as respostas para você aproveitar ao máximo o Feeds
         </p>
 
         <form onSubmit={handleBusca} style={{ maxWidth: "480px", margin: "0 auto" }}>
           <div style={{ display: "flex", gap: "8px" }}>
             <input
               type="text"
-              placeholder="Como eu posto um vídeo no Feeds?"
+              placeholder="Digite aqui o que você procura"
               value={busca}
               onChange={(e) => setBusca(e.target.value)}
               style={{
@@ -213,14 +211,14 @@ export default function Home() {
           color: "var(--suave)",
           marginBottom: "16px",
         }}>
-          Categorias
+          Tópicos de dúvidas
         </h2>
 
-        <div className="grid-4-colunas"> {/* 👈 Nova classe aplicada aqui! */}
+        <div className="grid-4-colunas">
           {categorias.map((cat) => (
-            <Link key={cat.id} href={`/categoria/${cat.id}`} style={{ textDecoration: "none", display: "block" }}> {/* 👈 Adicionado display: "block" */}
+            <Link key={cat.id} href={`/categoria/${cat.id}`} style={{ textDecoration: "none", display: "block" }}>
               <div style={{
-                height: "100%", /* 👈 Altura travada para alinhar com os outros cards */
+                height: "100%",
                 background: "var(--branco)",
                 border: "1px solid var(--borda)",
                 borderRadius: "10px",
@@ -237,15 +235,16 @@ export default function Home() {
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
-                <img src={cat.emoji} alt={cat.titulo} style={{ width: "32px", height: "32px", marginBottom: "8px" }} />
+                {/* 👇 className adicionado para inversão no dark mode */}
+                <img src={cat.emoji} alt={cat.titulo} className="icone-categoria" style={{ width: "32px", height: "32px", marginBottom: "8px" }} />
                 <div style={{
                   fontFamily: "Sora, sans-serif",
                   fontWeight: 600,
                   fontSize: "13px",
                   color: "var(--escuro)",
                   marginBottom: "4px",
-                  lineHeight: 1.3,       
-                  textWrap: "balance",  
+                  lineHeight: 1.3,
+                  textWrap: "balance",
                   wordBreak: "break-word"
                 }}>
                   {cat.titulo}
@@ -268,7 +267,7 @@ export default function Home() {
           color: "var(--suave)",
           marginBottom: "16px",
         }}>
-          Publicações mais populares pelos usuários
+          Dúvidas mais frequentes
         </h2>
 
         <div style={{
@@ -306,7 +305,7 @@ export default function Home() {
                 }}>
                   {i + 1}
                 </span>
-                <span style={{ fontSize: "14px", color: "#4A4A4A", fontWeight: 600, flex: 1 }}>
+                <span style={{ fontSize: "14px", color: "var(--medio)", fontWeight: 600, flex: 1 }}>
                   {perg.pergunta}
                 </span>
                 <span style={{ color: "var(--suave)", fontSize: "16px" }}>›</span>
@@ -329,7 +328,7 @@ export default function Home() {
           Vídeos que podem te ajudar
         </h2>
 
-        <div className="grid-4-colunas"> {/* 👈 Nova classe aplicada aqui também! */}
+        <div className="grid-4-colunas">
           {faqData.videos.map((video) => (
             <VideoCard key={video.id} video={video} />
           ))}

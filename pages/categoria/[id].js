@@ -44,12 +44,9 @@ export async function getStaticProps({ params }) {
 function PerguntaItem({ pergunta }) {
   const [aberto, setAberto] = useState(false);
 
-  // 👇 NOVO: Verifica se a URL mandou abrir essa pergunta específica
   useEffect(() => {
     if (window.location.hash === `#${pergunta.id}`) {
-      setAberto(true); // Abre a sanfona automaticamente
-      
-      // Dá um tempinho mínimo para a sanfona abrir e depois rola a tela até ela
+      setAberto(true);
       setTimeout(() => {
         const elemento = document.getElementById(pergunta.id);
         if (elemento) {
@@ -131,7 +128,6 @@ function PerguntaItem({ pergunta }) {
                   fontSize: "14px",
                   color: "var(--medio)",
                   padding: "12px 0",
-                  /* Tira a borda inferior se for o último item */
                   borderBottom: i === pergunta.lista.length - 1 ? "none" : "1px solid var(--borda)",
                   lineHeight: 1.5,
                 }}>
@@ -156,7 +152,6 @@ function PerguntaItem({ pergunta }) {
                   gap: "12px",
                   alignItems: "flex-start",
                   padding: "12px 0",
-                  /* Tira a borda inferior se for o último item */
                   borderBottom: i === pergunta.passos.length - 1 ? "none" : "1px solid var(--borda)",
                   fontSize: "14px",
                   color: "var(--medio)",
@@ -253,10 +248,12 @@ function PerguntaItem({ pergunta }) {
             borderRadius: "8px",
             padding: "20px",
             display: "flex",
-            flexDirection: "column",
-            gap: "16px",
+            flexWrap: "wrap",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "20px",
           }}>
-            <div>
+            <div style={{ flex: "1 1 280px" }}>
               <p style={{ 
                 fontFamily: "Sora, sans-serif",
                 fontSize: "16px", 
@@ -289,13 +286,13 @@ function PerguntaItem({ pergunta }) {
                 fontFamily: "Sora, sans-serif",
                 fontWeight: 700,
                 fontSize: "12px",
-                padding: "8px 10px",
+                padding: "8px 12px",
                 borderRadius: "5px",
                 textDecoration: "none",
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "8px",
-                alignSelf: "flex-start",
+                flexShrink: 0,
               }}
             >
               <img src="/whatsapp.png" style={{ width: "16px", height: "16px" }} alt="WhatsApp" />
@@ -344,9 +341,9 @@ export default function CategoriaPagina({ categoria }) {
           <span>{categoria.titulo}</span>
         </div>
 
-        {/* Título */}
+        {/* Título — ícone com className para inversão no dark mode */}
         <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "32px" }}>
-          <img src={categoria.emoji} alt={categoria.titulo} style={{ width: "40px", height: "40px" }} />
+          <img src={categoria.emoji} alt={categoria.titulo} className="icone-categoria" style={{ width: "40px", height: "40px" }} />
           <div>
             <h1 style={{ fontFamily: "Sora, sans-serif", fontWeight: 700, fontSize: "22px", color: "var(--escuro)" }}>
               {categoria.titulo}

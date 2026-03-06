@@ -1,5 +1,6 @@
-
-
+/* ============================================================
+   CORES — LIGHT MODE (padrão)
+============================================================ */
 :root {
   --verde: #2D6A4F;
   --verde-claro: #52B788;
@@ -14,6 +15,47 @@
   --branco: #FFFFFF;
   --borda: #E0DDD5;
   --vermelho: #D62828;
+  --header-bg: #1B1B1B;
+}
+
+/* ============================================================
+   CORES — DARK MODE (ativado pelo botão ou pelo sistema)
+============================================================ */
+[data-theme="dark"] {
+  --verde: #52B788;
+  --verde-claro: #74C69D;
+  --verde-clarinho: #1a2e23;
+  --verde-palido: #1e3a2a;
+  --amarelo: #f4df22;
+  --amarelo-palido: #2a2510;
+  --escuro: #F0EDE6;
+  --medio: #C0BDB6;
+  --suave: #7A7A7A;
+  --bg: #1A1A1A;
+  --branco: #242424;
+  --borda: #333333;
+  --vermelho: #FF6B6B;
+  --header-bg: #52B788;
+}
+
+/* Segue o tema do celular automaticamente (se não tiver botão ativado) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --verde: #52B788;
+    --verde-claro: #74C69D;
+    --verde-clarinho: #1a2e23;
+    --verde-palido: #1e3a2a;
+    --amarelo: #f4df22;
+    --amarelo-palido: #2a2510;
+    --escuro: #F0EDE6;
+    --medio: #C0BDB6;
+    --suave: #7A7A7A;
+    --bg: #1A1A1A;
+    --branco: #242424;
+    --borda: #333333;
+    --vermelho: #FF6B6B;
+    --header-bg: #52B788;
+  }
 }
 
 * {
@@ -32,6 +74,7 @@ body {
   color: var(--escuro);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 /* Links */
@@ -47,6 +90,7 @@ a:hover {
 h1, h2, h3, h4 {
   font-family: 'Sora', sans-serif;
 }
+
 /* ==========================================================
    GRID RESPONSIVO (Categorias e Vídeos)
    Mobile: Sempre 2 colunas
@@ -54,15 +98,14 @@ h1, h2, h3, h4 {
 ========================================================== */
 .grid-responsivo {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Força 2 colunas por padrão (celular) */
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin-bottom: 48px;
 }
 
-/* Quando a tela for maior que 600px (Tablet/Desktop), muda a regra */
 @media (min-width: 600px) {
   .grid-responsivo {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Volta a ser flexível */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
 }
 
@@ -72,13 +115,17 @@ h1, h2, h3, h4 {
 ========================================================== */
 .grid-4-colunas {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Sempre 2 colunas no celular */
+  grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   margin-bottom: 48px;
 }
 
 @media (min-width: 650px) {
   .grid-4-colunas {
-    grid-template-columns: repeat(4, 1fr); /* Trava em 4 colunas no computador */
+    grid-template-columns: repeat(4, 1fr);
   }
+}
+
+[data-theme="dark"] .icone-categoria {
+  filter: invert(1);
 }

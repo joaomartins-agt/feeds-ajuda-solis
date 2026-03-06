@@ -8,7 +8,7 @@
         {
           "id": "o-que-e-feeds",
           "pergunta": "O que é o Feeds?",
-          "resposta": "O **Feeds** é a rede social do aplicativo Solis, criado pela **Fundação Solidaridad Brasil**, onde **produtores, produtoras e técnicos compartilham vídeos, experiências e conhecimentos do campo**.",
+          "resposta": "O **Feeds** é a rede social do aplicativo Solis, criado pela **Fundação Solidaridad**, onde **produtores, produtoras e técnicos compartilham vídeos, experiências e conhecimentos do campo**.",
           "introLista": "No Feeds, você pode:",
           "lista": [
             "**Assistir vídeos** de outros produtores",
@@ -57,12 +57,6 @@
             "Caso continue sem receber, feche o Solis e tente de novo",
             "Se o erro continuar, entre em contato com o **Service Desk**"
           ]
-        },
-        {
-          "id": "troquei-numero",
-          "pergunta": "Troquei de número de celular. Como acesso novamente?",
-          "resposta": "alterarrr",
-          "dica": "ALTERAR"
         }
       ]
     },
@@ -160,7 +154,7 @@
           "resposta": "As interações no Feeds são **simples**:",
           "lista": [
             "**Para curtir:** toque no ícone de **coração** no canto direito do vídeo",
-            "**Para comentar:** toque no ícone de **balão**, escreva no campo **\"Digite seu comentário\"** e clique no círculo amarelo para enviar",
+            "**Para comentar:** toque no ícone de **balão**, escreva no campo **\"Digite seu comentário\"** e clique no botão  **\"Enviar\"**",
             "**Para responder um comentário:** na tela de comentários, encontre o comentário, **escreva sua resposta e envie**"
           ]
         }
@@ -225,7 +219,7 @@
         {
           "id": "o-que-posso-postar",
           "pergunta": "Que tipo de conteúdo posso postar?",
-          "resposta": "O **Feeds** é é voltado para **boas práticas agrícolas e compartilhamento de conhecimento**. Você pode postar:",
+          "resposta": "O **Feeds** é voltado para **boas práticas agrícolas e compartilhamento de conhecimento**. Você pode postar:",
           "lista": [
             "**Boas práticas de produção da sua cadeia**",
             "**Suas experiências e vivências no campo**",

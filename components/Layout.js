@@ -2,7 +2,7 @@
 // COMPONENTE DE LAYOUT
 // ============================================================
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import faqData from "../data/faq.json";
 
@@ -14,13 +14,33 @@ const whatsappLink = `https://wa.me/${config.whatsappNumero}?text=${encodeURICom
 
 export default function Layout({ children }) {
   const [aberto, setAberto] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const salvo = localStorage.getItem("tema");
+    if (salvo === "dark") {
+      setDarkMode(true);
+      document.documentElement.setAttribute("data-theme", "dark");
+    } else if (salvo === "light") {
+      setDarkMode(false);
+      document.documentElement.setAttribute("data-theme", "light");
+    }
+  }, []);
+
+  function toggleDarkMode() {
+    const novoModo = !darkMode;
+    setDarkMode(novoModo);
+    const tema = novoModo ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", tema);
+    localStorage.setItem("tema", tema);
+  }
 
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
 
       {/* ── HEADER ── */}
       <header style={{
-        background:"var(--escuro)",
+        background: "var(--header-bg)",
         padding: "12px 10px",
         display: "flex",
         alignItems: "center",
@@ -28,7 +48,9 @@ export default function Layout({ children }) {
         position: "sticky",
         top: 0,
         zIndex: 100,
+        transition: "background 0.2s",
       }}>
+
         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "8px" }}>
           <img src="/logo.png" alt="Solis" style={{ height: "36px" }} />
           <span style={{
@@ -40,6 +62,36 @@ export default function Layout({ children }) {
             · Central de Ajuda do Solis
           </span>
         </Link>
+
+        {/* Botão dark/light — canto direito */}
+        <button
+          onClick={toggleDarkMode}
+          title={darkMode ? "Mudar para modo claro" : "Mudar para modo escuro"}
+          style={{
+            position: "absolute",
+            right: "16px",
+            background: "rgba(255,255,255,0.1)",
+            border: "1px solid rgba(255,255,255,0.2)",
+            borderRadius: "8px",
+            width: "36px",
+            height: "36px",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "18px",
+            transition: "background 0.2s",
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.2)"}
+          onMouseLeave={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.1)"}
+        >
+          <img 
+  src={darkMode ? "/claro.png" : "/escuro.png"} 
+  alt={darkMode ? "Modo claro" : "Modo escuro"} 
+  style={{ width: "20px", height: "20px" }} 
+/>
+        </button>
+
       </header>
 
       {/* ── CONTEÚDO DA PÁGINA ── */}
@@ -71,18 +123,15 @@ export default function Layout({ children }) {
         gap: "8px",
       }}>
 
-        {/* Balão que aparece ao clicar no botão */}
         {aberto && (
           <div style={{
-            background: "#fff",
+            background: "var(--branco)",
             border: "1px solid var(--borda)",
             borderRadius: "12px",
             padding: "14px 16px",
             boxShadow: "0 4px 16px rgba(0,0,0,0.15)",
             maxWidth: "220px",
           }}>
-
-            {/* Título com botão X para fechar */}
             <div style={{
               display: "flex",
               justifyContent: "space-between",
@@ -138,7 +187,6 @@ export default function Layout({ children }) {
           </div>
         )}
 
-        {/* Botão redondo cinza */}
         <button
           onClick={() => setAberto(!aberto)}
           style={{
