@@ -137,7 +137,7 @@ export default function Home() {
               background: "#42c16c",
               color: "#fff",
               textDecoration: "none",
-              padding: "4px 12px",
+              padding: "4px 6px",
               borderRadius: "6px",
               fontFamily: "Sora, sans-serif",
               fontWeight: 600,
@@ -147,7 +147,7 @@ export default function Home() {
               gap: "4px",
             }}
           >
-            ‹ Voltar ao Feeds
+            ‹ Retornar ao Feeds
           </a>
         </div>
 
@@ -156,7 +156,7 @@ export default function Home() {
           display: "inline-block",
           background: "rgba(0,0,0,0.10)",
           borderRadius: "12px",
-          padding: "16px 16px",
+          padding: "10px 8px",
           marginBottom: "20px",
           backdropFilter: "blur(2px)",
           border: "1px solid rgba(255,255,255,0.2)",
@@ -164,8 +164,8 @@ export default function Home() {
           <h1 style={{
             fontFamily: "Sora, sans-serif",
             fontSize: "clamp(20px, 5vw, 30px)",
-            fontWeight: 700,
-            color: "#fff",
+            fontWeight: 800,
+            color: "#f0f0f0",
             marginBottom: "6px",
             textShadow: "0 1px 4px rgba(0,0,0,0.5)",
           }}>
