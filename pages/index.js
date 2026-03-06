@@ -121,7 +121,7 @@ export default function Home() {
 
       {/* ── HERO com busca ── */}
       <div style={{
-        background: `url('/cenario${fotoAtual}.jpg') center/cover no-repeat`,
+        background: `url('/cenario${fotoAtual}.webp') center/cover no-repeat`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         padding: "20px 20px 56px",
@@ -165,14 +165,13 @@ export default function Home() {
             fontFamily: "Sora, sans-serif",
             fontSize: "clamp(20px, 5vw, 30px)",
             fontWeight: 800,
-            color: "#f0f0f0",
+            color: "#fff",
             marginBottom: "6px",
-            textShadow: "0 1px 4px rgba(0,0,0,0.5)",
           }}>
             Como podemos te ajudar?
           </h1>
           <p style={{
-            color: "#f0f0f0",
+            color: "#ffffff",
             fontSize: "14px",
             margin: 0,
             textShadow: "0 1px 3px rgba(0,0,0,0.5)",
