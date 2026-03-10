@@ -259,7 +259,6 @@ function PerguntaItem({ pergunta }) {
                 fontSize: "16px", 
                 color: "var(--escuro)",
                 fontWeight: 700, 
-                marginBottom: "12px",
                 margin: 0
               }}>
                 Ainda precisa de ajuda?
@@ -323,7 +322,7 @@ export default function CategoriaPagina({ categoria }) {
           gap: "6px",
         }}>
           <Link href="/" style={{
-            background: "#42c16c",
+            background: "#42C16C",
             color: "#fff",
             textDecoration: "none",
             padding: "4px 12px",

@@ -85,11 +85,11 @@ export default function Layout({ children }) {
           onMouseEnter={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.2)"}
           onMouseLeave={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.1)"}
         >
-          <img 
-  src={darkMode ? "/claro.png" : "/escuro.png"} 
-  alt={darkMode ? "Modo claro" : "Modo escuro"} 
-  style={{ width: "20px", height: "20px" }} 
-/>
+          <img
+            src={darkMode ? "/claro.png" : "/escuro.png"}
+            alt={darkMode ? "Modo claro" : "Modo escuro"}
+            style={{ width: "20px", height: "20px" }}
+          />
         </button>
 
       </header>
@@ -101,7 +101,7 @@ export default function Layout({ children }) {
 
       {/* ── RODAPÉ ── */}
       <footer style={{
-        background: "var(--verde-claro)",
+        background: "#42C16C",
         color: "#fff",
         textAlign: "center",
         padding: "10px",

@@ -3,7 +3,7 @@
 ============================================================ */
 :root {
   --verde: #2D6A4F;
-  --verde-claro: #52B788;
+  --verde-claro: #42C16C;
   --verde-clarinho: #F0F7F2;
   --verde-palido: #D8F3DC;
   --amarelo: #f4df22;
@@ -23,7 +23,7 @@
 ============================================================ */
 [data-theme="dark"] {
   --verde: #52B788;
-  --verde-claro: #74C69D;
+  --verde-claro: #42C16C;
   --verde-clarinho: #1a2e23;
   --verde-palido: #1e3a2a;
   --amarelo: #f4df22;
@@ -35,14 +35,14 @@
   --branco: #242424;
   --borda: #333333;
   --vermelho: #FF6B6B;
-  --header-bg: #52B788;
+  --header-bg: #21A358;
 }
 
 /* Segue o tema do celular automaticamente (se não tiver botão ativado) */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --verde: #52B788;
-    --verde-claro: #74C69D;
+    --verde-claro: #42C16C;
     --verde-clarinho: #1a2e23;
     --verde-palido: #1e3a2a;
     --amarelo: #f4df22;
@@ -54,7 +54,7 @@
     --branco: #242424;
     --borda: #333333;
     --vermelho: #FF6B6B;
-    --header-bg: #52B788;
+    --header-bg: #21A358;
   }
 }
 
