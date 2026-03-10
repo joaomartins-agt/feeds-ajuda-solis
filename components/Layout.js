@@ -107,8 +107,9 @@ export default function Layout({ children }) {
         padding: "10px",
         fontSize: "14px",
         lineHeight: 1.6,
+        fontStyle: "bold",
       }}>
-        Central de Ajuda ao usuário do Solis<br />Solidaridad Network Brasil · 2026
+        Central de Ajuda do Solis<br />Fundação Solidaridad Brasil · 2026
       </footer>
 
       {/* ── BOTÃO FLUTUANTE COLAPSÁVEL DO WHATSAPP ── */}
