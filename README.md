@@ -1,20 +1,8 @@
 # 📱 Central de Ajuda — Feeds Solis
 
-Bem-vindo(a) ao repositório da Central de Ajuda do Solis! Este é um projeto construído em Next.js (React) focado em ser rápido, responsivo e amigável para os usuários.
+Repositório da Central de Ajuda do Solis. Este é um projeto construído em Next.js (React) focado em ser rápido, responsivo e amigável para os usuários.
 
 ---
-
-## 💻 Como rodar o projeto no seu computador
-
-Se você acabou de baixar o projeto ou fechou o VS Code, siga estes passos para ver o site funcionando no seu navegador:
-
-1. Abra o terminal do VS Code.
-2. (Primeira vez apenas) Digite `npm install` para instalar as dependências.
-3. Digite `npm run dev` para ligar o servidor.
-4. Abra o navegador e acesse: `http://localhost:3000`
-
----
-
 ## 🗂️ Estrutura de arquivos
 
 Abaixo está o mapa para você se encontrar facilmente no código:
@@ -84,21 +72,7 @@ A nova categoria vai aparecer automaticamente na tela inicial e a página dela s
 
 ---
 
-## 🚀 Como publicar as atualizações no site oficial (Vercel)
-
-O site está conectado à Vercel. Isso significa que qualquer alteração enviada para o GitHub entra no ar automaticamente em cerca de 1 a 2 minutos.
-
-**Pelo VS Code:**
-1. Clique no ícone de **Controle do Código-Fonte** na barra lateral esquerda (ou aperte `Cmd + Shift + G`).
-2. Passe o mouse sobre "Changes" (Alterações) e clique no botão **`+`** para preparar os arquivos.
-3. Na caixa "Message" (Mensagem), digite o que você mudou (Ex: "Adicionei a pergunta X").
-4. Clique em **Commit**.
-5. Clique no botão azul **Sync Changes** (Sincronizar Alterações).
-6. Pronto! A Vercel fará o resto.
-
----
-
-## ❓ Dúvidas da Estrutura
+## ❓Estrutura
 
 **P: O que é o `[id].js` na pasta de categoria?** R: É uma rota dinâmica do Next.js. O `[id]` vira a parte variável da URL (ex: `/categoria/conta`, `/categoria/postagem`). Um único arquivo inteligente serve para exibir todas as categorias do site.
 
