@@ -7,13 +7,13 @@
   --verde-clarinho: #F0F7F2;
   --verde-palido: #D8F3DC;
   --amarelo: #f4df22;
-  --amarelo-palido: #f6f3e2;
+  --amarelo-palido: #FFFBE6; /* Deixei um amarelo mais limpo caso use em alertas */
   --escuro: #1B1B1B;
   --medio: #4A4A4A;
   --suave: #8A8A8A;
-  --bg: #F7F5F0;
-  --branco: #FFFFFF;
-  --borda: #E0DDD5;
+  --bg: #e8e8e8b5; /* Cinza muuuito clarinho, padrão de fundo de aplicativos */
+  --branco: #FFFFFF; /* Branco puro para os cartões saltarem da tela */
+  --borda: #EAEAEA; /* Cinza neutro e suave para as linhas, igual ao app */
   --vermelho: #D62828;
   --header-bg: #1B1B1B;
   --footer-bg: #42C16C;

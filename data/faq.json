@@ -7,15 +7,15 @@
       "perguntas": [
         {
           "id": "o-que-e-feeds",
-          "pergunta": "O que é o Feeds?",
-          "resposta": "O **Feeds** é a rede social do aplicativo Solis, criado pela **Fundação Solidaridad**, onde **produtores, produtoras e técnicos compartilham vídeos, experiências e conhecimentos do campo**.",
-          "introLista": "No Feeds, você pode:",
+          "pergunta": "O que é o Feeds e como navegar por ele?",
+          "resposta": "O **Feeds** é a rede social do aplicativo Solis, criado pela **Fundação Solidaridad**, onde produtores, produtoras e técnicos compartilham vídeos, experiências e conhecimentos do campo.",
+          "introLista": "Para navegar pelo aplicativo, você tem um menu inferior fixo e um menu lateral completo:",
           "lista": [
-            "**Assistir vídeos** de outros produtores",
-            "**Publicar seus próprios vídeos**, da sua galeria ou de outras redes sociais (Youtube, TikTok, Kawai, entre outras)",
-            "**Curtir, comentar e compartilhar** conteúdos",
-            "**Aprender** boas práticas de produção",
-            "**Aprender** dicas sobre agricultura e agronegócio"
+            "**Home:** Tela inicial com atalhos rápidos e os seus dados principais.",
+            "**Feed:** Onde você vê as publicações, curte, comenta e assiste aos vídeos da rede.",
+            "**Comunidades:** Espaço para interagir em grupos de interesses específicos.",
+            "**Meu Perfil:** Onde você gerencia suas publicações, seguidores e edita seus dados.",
+            "**Menu lateral (três linhas no topo):** Dá acesso rápido para buscar outros usuários, configurar sua conta, acessar a Central de Ajuda ou sair do app."
           ]
         }
       ]
@@ -27,35 +27,43 @@
       "perguntas": [
         {
           "id": "criar-conta",
-          "pergunta": "Como eu crio uma conta no Feeds? Preciso de senha?",
-          "resposta": "**O acesso ao Feeds é simplificado. Ele é feito por um código de verificação enviado para o seu WhatsApp.** Não é necessário criar login com e-mail e senha.",
+          "pergunta": "Como eu acesso minha conta no Feeds? Preciso de senha?",
+          "resposta": "O acesso ao Feeds é simplificado e seguro. Ele é feito por um **código de verificação enviado para o seu WhatsApp**. Não é necessário criar login com e-mail e senha.",
+          "introPassos": "Siga o passo a passo para entrar:",
           "passos": [
-            "Abra o aplicativo **Solis**",
-            "Clique em **\"Entrar\"**",
-            "Informe seu **nome** e **número de celular**",
-            "Aguarde o **código de autenticação** enviado por WhatsApp",
-            "Digite o código no aplicativo",
-            "Role a tela até o final, leia os termos e marque **\"Li e aceito os Termos de Condições de Uso e a Política de Privacidade\"**",
-            "Após isso, clique em **\"Continuar\"**",
-            "**Pronto**, você está logado no Solis!"
+            "Abra o aplicativo **Solis** e toque em **\"Entrar\"**.",
+            "Na tela \"Acessar Conta\", preencha o seu **Nome** e o **número do seu WhatsApp** (com o DDD).",
+            "Toque no botão verde **\"Receber código de acesso\"**.",
+            "Você receberá uma mensagem no seu WhatsApp com um **código de 6 dígitos**.",
+            "Volte ao aplicativo Solis e digite esse código nos quadradinhos indicados na tela.",
+            "O aplicativo fará a verificação automaticamente. **Pronto!** Você já está logado no Feeds."
           ]
         },
         {
+          "id": "codigo-incorreto",
+          "pergunta": "Digitei o código errado e apareceu \"Código incorreto\". Como corrijo?",
+          "resposta": "Se você preencheu os 6 dígitos e a tela mostrou um alerta vermelho de \"Código incorreto\", não se preocupe:",
+          "passos": [
+            "Toque no botão verde **\"Tentar novamente\"**.",
+            "Abra o seu WhatsApp e verifique qual foi a mensagem mais recente enviada pelo Solis.",
+            "Digite os 6 dígitos novamente com atenção."
+          ],
+          "dica": "Se o teclado preencher errado, você pode apagar o número tocando no campo e digitando o correto."
+        },
+        {
           "id": "codigo-nao-chegou",
-          "pergunta": "O código de autenticação não chegou no meu WhatsApp.",
+          "pergunta": "O código de autenticação não chegou no meu WhatsApp. O que fazer?",
           "resposta": "Se o código não chegou, **verifique** os itens abaixo antes de tentar novamente:",
           "lista": [
-            "Se o número foi digitado corretamente, **com o DDD do seu estado e os nove dígitos (ex: 11 91234-5678)**",
-            "Se o número informado **tem acesso ao WhatsApp**",
-            "Se o celular **tem sinal de internet**",
-            "Se o WhatsApp está **funcionando normalmente**"
+            "Se o número foi digitado corretamente, **com o DDD do seu estado (ex: 11 91234-5678)**.",
+            "Se o número informado **tem acesso ao WhatsApp**.",
+            "Se o seu celular **está com sinal de internet** no momento."
           ],
-          "introPassos": "O que fazer:",
+          "introPassos": "O que fazer para resolver:",
           "passos": [
-            "Aguarde aproximadamente 1 minuto após o erro acontecer",
-            "Solicite o envio do código novamente",
-            "Caso continue sem receber, feche o Solis e tente de novo",
-            "Se o erro continuar, entre em contato com o **Service Desk**"
+            "Na tela onde você digita o código, aguarde alguns segundos e toque na frase verde **\"Não recebeu o código? Reenviar\"**.",
+            "Caso continue sem receber, feche o aplicativo Solis, aguarde um minuto e tente de novo desde o início.",
+            "Se o erro continuar, entre em contato com o nosso **Service Desk** no botão abaixo."
           ]
         }
       ]
@@ -68,78 +76,45 @@
         {
           "id": "publicar-video",
           "pergunta": "Como eu publico um vídeo no Feeds?",
-          "introPassos": "Para publicar o seu vídeo no Feeds:",
+          "introPassos": "Para publicar o seu vídeo no Feeds, siga o passo a passo:",
           "passos": [
-            "Abra o aplicativo **Solis** no seu celular",
-            "Acesse o **Feeds**",
-            "Toque no botão **\"+\"** (publicar)",
-            "A tela traz duas opções: **copiar um link de outro aplicativo** e publicar no Solis, ou **selecionar um vídeo da galeria** do celular",
-            "Revise o vídeo selecionado, adicionando descrição e tags (separe-as por vírgulas)",
-            "Toque em **Publicar**"
-          ],
-          "conclusao": "Após a conclusão da publicação, o vídeo ficará disponível no Feeds para outros usuários visualizarem, curtirem e comentarem.",
-          "importante": [
-            "É necessário estar **conectado à internet** para publicar vídeos",
-            "Vídeos maiores que 30 segundos podem levar mais tempo para carregar",
-            "Durante o envio, evite fechar o aplicativo enquanto a mensagem de sucesso aparecer no topo da tela"
+            "No menu inferior do aplicativo, toque no botão verde com o sinal de **\"+\"** (Feed).",
+            "A tela de **\"Nova Publicação\"** vai abrir. Você tem duas opções: colar o link de um vídeo (como do YouTube) ou tocar em **\"Selecionar arquivo\"** para escolher um vídeo da galeria do seu aparelho.",
+            "Aguarde a imagem de pré-visualização carregar na tela para continuar.",
+            "Escreva a **Descrição da publicação** contando sobre o seu vídeo.",
+            "Adicione **Tags** (palavras-chave) para ajudar as pessoas a encontrarem seu conteúdo. Digite a tag e toque no botão verde **\"+\"**.",
+            "Toque no botão **\"Publicar\"** no final da tela."
           ]
-        },
-        {
-          "id": "gravar-pelo-app",
-          "pergunta": "Como gravar um vídeo direto pelo app?",
-          "passos": [
-            "Toque no botão **\"+\"** no canto inferior da tela",
-            "Escolha **\"Escolher da minha galeria\"**",
-            "Selecione **\"Câmera\"** (Android) ou **\"Gravar Vídeo\"** (iOS)",
-            "Grave o vídeo, com o tamanho **máximo de 3 minutos**, para não ocorrer problemas no envio",
-            "Adicione **título, descrição e tags**",
-            "Toque em **Enviar** e aguarde a mensagem de sucesso."
-          ],
-          "dica": "**Aguarde a mensagem de sucesso desaparecer antes de sair do app.**"
-        },
-        {
-          "id": "video-da-galeria",
-          "pergunta": "Como postar um vídeo da galeria do celular?",
-          "passos": [
-            "Toque no botão **\"+\"** no canto inferior da tela",
-            "Escolha **\"Escolher da minha galeria\"**",
-            "O app de fotos do celular vai abrir. **Escolha o vídeo**",
-            "Use um vídeo de **até 3 minutos** para evitar problemas no envio",
-            "Adicione **título, descrição e tags**",
-            "Toque em **Enviar** e aguarde a conclusão"
-          ],
-          "dica": "**Aguarde a mensagem de sucesso antes de fechar o aplicativo.**"
         },
         {
           "id": "video-autoral",
           "pergunta": "O vídeo precisa ser autoral? Posso postar de outras redes?",
-          "resposta": "Não é obrigatório que o vídeo seja gravado por você. **A ideia é compartilhar conteúdo útil para outros produtores.** Você pode:",
+          "resposta": "Não é obrigatório que o vídeo seja gravado por você. A ideia é compartilhar conteúdo útil para outros produtores. Você pode:",
           "lista": [
-            "Publicar vídeos gravados por você",
-            "Compartilhar vídeos de outras redes **(Youtube, TikTok, dentre outras redes sociais)** copiando e colando o link no **Feeds**"
+            "Publicar vídeos gravados por você direto do seu celular.",
+            "Compartilhar vídeos de outras redes (como YouTube, Tiktok, Instagram, entre outras redes sociais) apenas colando o link na tela de Nova Publicação."
           ],
-          "dica": "Os vídeos precisam respeitar as **regras de uso da plataforma**."
+          "dica": "Lembre-se sempre de respeitar as regras de uso da plataforma."
         },
         {
           "id": "apagar-video",
-          "pergunta": "Como apagar um vídeo que eu publiquei?",
+          "pergunta": "Como apagar uma publicação minha?",
           "passos": [
-            "No vídeo que você publicou, toque no ícone da **lixeira** (ao lado das curtidas)",
-            "Clique em **\"Sim\"** para confirmar a exclusão",
-            "**Pronto!** O vídeo será removido do **Feeds**"
+            "Vá até a publicação que você deseja remover (você pode encontrá-la mais facilmente na aba \"Meu Perfil\").",
+            "Toque no ícone de **lixeira** que fica no canto superior direito do vídeo, ao lado do seu nome.",
+            "Confirme a exclusão. Pronto, o vídeo será removido do Feeds."
           ]
         },
         {
           "id": "video-nao-carregou",
           "pergunta": "Meu vídeo não carregou. O que fazer?",
-          "introPassos": "Se por algum motivo o seu vídeo não carregou ao tentar publicá-lo no Feeds, siga as etapas abaixo:",
+          "introPassos": "Se por algum motivo o seu vídeo não carregou ao tentar publicá-lo, siga as etapas abaixo:",
           "passos": [
-            "Verifique sua conexão com a internet. É importante que esteja conectado a internet para publicar qualquer conteúdo ",
-            "Aguarde alguns segundos após a verificação do sinal de internet e tente publicar novamente",
-            "Se o problema continuar, feche o aplicativo e tente novamente após um minuto. Lembre-se de esperar que a **mensagem de sucesso** que aparece no **topo superior** assim que ele for publicado. Caso esta mensagem não apareça como concluída, **o vídeo não estará disponível no Feeds**.",
-            "Caso não resolva, entre em contato com o **Service Desk**"
-          ],
-          "dica": "Se a mensagem de sucesso não aparecer no topo da tela, o vídeo não foi publicado."
+            "Verifique sua conexão com a internet. É fundamental ter um bom sinal para enviar arquivos pesados.",
+            "Vídeos muito longos demoram mais. Aguarde na tela de publicação até o aviso de sucesso aparecer.",
+            "Se o problema continuar, feche o aplicativo e tente novamente.",
+            "Caso não resolva, entre em contato com o **Service Desk** pelo botão de ajuda nesta página."
+          ]
         }
       ]
     },
@@ -150,12 +125,32 @@
       "perguntas": [
         {
           "id": "curtir-comentar",
-          "pergunta": "Como curtir, comentar ou responder um comentário?",
-          "resposta": "As interações no Feeds são **simples**:",
+          "pergunta": "Como curtir, comentar ou responder a um comentário?",
+          "resposta": "As interações no Feeds acontecem logo abaixo de cada vídeo:",
           "lista": [
-            "**Para curtir:** toque no ícone de **coração** no canto direito do vídeo",
-            "**Para comentar:** toque no ícone de **balão**, escreva no campo **\"Digite seu comentário\"** e clique no botão  **\"Enviar\"**",
-            "**Para responder um comentário:** na tela de comentários, encontre o comentário, **escreva sua resposta e envie**"
+            "**Para curtir:** toque no ícone de **coração**.",
+            "**Para comentar:** toque no ícone de **balão**, escreva no campo \"Escreva um comentário\" lá embaixo e toque na setinha de enviar.",
+            "**Para responder alguém:** nos comentários do vídeo, toque na palavra verde **\"Responder\"** logo abaixo do texto da pessoa."
+          ]
+        },
+        {
+          "id": "apagar-comentario",
+          "pergunta": "Escrevi errado. Como apagar um comentário que eu fiz?",
+          "introPassos": "O Feeds agora permite que você apague seus próprios comentários rapidamente:",
+          "passos": [
+            "Encontre o comentário que você fez.",
+            "Toque no ícone de **lixeira** do lado direito do seu texto."
+          ],
+          "dica": "Se você apagou sem querer, seja rápido! Uma barra preta vai aparecer embaixo dizendo \"Comentário excluído\". Toque na palavra verde **\"Desfazer\"** para recuperá-lo."
+        },
+        {
+          "id": "ver-notificacoes",
+          "pergunta": "Onde eu vejo quem curtiu ou comentou nas minhas publicações?",
+          "resposta": "O Feeds possui uma central de Notificações!",
+          "passos": [
+            "Na tela inicial ou no Feed, olhe para o canto superior direito.",
+            "Toque no ícone de **sininho**. Se houver uma bolinha vermelha nele, você tem novidades!",
+            "Lá você verá uma lista completa mostrando quem curtiu seus vídeos, quem comentou e as novas pessoas que começaram a te seguir."
           ]
         }
       ]
@@ -168,13 +163,13 @@
         {
           "id": "compartilhar-video",
           "pergunta": "Como compartilhar um vídeo com outra pessoa?",
-          "resposta": "Sempre que quiser compartilhar um vídeo de forma externa para uma pessoa que ainda não é usuária do Solis, siga as etapas abaixo:",
+          "resposta": "Sempre que quiser compartilhar um vídeo com uma pessoa que ainda não usa o aplicativo, siga as etapas abaixo:",
           "passos": [
-            "Abra o vídeo que deseja **compartilhar**",
-            "No canto inferior direito, toque no ícone da **seta** (compartilhar)",
-            "Aparecerá 3 opções aonde você pode escolher a forma que irá compartilhar: **por WhatsApp, SMS ou e-mail**.",
-            "Se for por WhatsApp, clique em **\"Abrir WhatsApp\"** e escolha o contato",
-            "**Pronto!** Conteúdo compartilhado com sucesso"
+            "No Feed ou navegando pelo Perfil de alguém, encontre o vídeo que deseja compartilhar.",
+            "No canto inferior direito do vídeo, toque no ícone da **seta** (compartilhar).",
+            "Aparecerão as opções para você enviar o link: por WhatsApp, SMS ou e-mail.",
+            "Se for por WhatsApp, toque na opção para abrir o seu aplicativo e escolha o contato desejado.",
+            "Pronto! O link do conteúdo será enviado."
           ]
         }
       ]
@@ -186,27 +181,39 @@
       "perguntas": [
         {
           "id": "editar-perfil",
-          "pergunta": "Como editar o meu perfil?",
-          "resposta": "Para editar informações pessoais na sua conta, siga as etapas abaixo:",          
+          "pergunta": "Como editar o meu perfil e mudar a aparência (Claro/Escuro)?",
+          "introPassos": "Para manter suas informações atualizadas e personalizar as cores do aplicativo:",
           "passos": [
-            "Acesse seu **Perfil** pelo ícone no canto inferior direito",
-            "Toque em **\"Editar perfil\"**",
-            "**Para alterar a sua foto de perfil:** clique em **\"Alterar foto\"** e escolha se deseja tirar a imagem da sua câmera, ou escolher uma imagem da sua galeria do dispositivo",
-            "**Para alterar o seu nome e bio:** digite o conteúdo desejado nos campos informados",
-            "**Para alterar a sua localização:** digite o nome da sua localização, espere alguns segundos para que a busca encontre a localização e escolha uma das opções da lista, logo após, clique em **\"Concluir\"**",
-            "Toque em **\"Salvar\"** para confirmar as alterações"
+            "Acesse o menu inferior e toque na aba **\"Meu Perfil\"**.",
+            "Toque no botão verde **\"Editar Perfil\"**.",
+            "Você poderá alterar sua foto de perfil, Nome, Bio (descrição) e Localização.",
+            "Nessa mesma tela, toque em **\"Aparência\"** para escolher se deseja usar o aplicativo no modo Claro, Escuro ou usar as configurações do seu próprio celular.",
+            "Ao terminar, toque em **\"Salvar\"**."
           ]
+        },
+        {
+          "id": "seguidores-seguindo",
+          "pergunta": "Como funciona a lista de Seguidores e Seguindo?",
+          "resposta": "O Feeds permite que você se conecte e crie uma rede com outros produtores!",
+          "lista": [
+            "**Seguidores:** São as pessoas que acompanham o seu trabalho. Você pode ver o número total direto no seu perfil.",
+            "**Seguindo:** São os usuários que você escolheu acompanhar. Quando você segue alguém, as publicações dessa pessoa ganham prioridade de aparecer no seu Feed.",
+            "**Como seguir alguém:** Ao ver a publicação de alguém interessante, toque no nome ou na foto da pessoa para abrir o perfil dela e depois toque no botão verde **\"Seguir\"**."
+          ]
+        },
+        {
+          "id": "selo-embaixador",
+          "pergunta": "O que significa o selo azul com um \"check\" ao lado de alguns nomes?",
+          "resposta": "Esse selo azul indica que o usuário é um **Embaixador** da Solidaridad. São produtores ou técnicos especialistas convidados para compartilhar conhecimentos oficiais, experiências testadas e ajudar a comunidade a crescer com boas práticas no campo."
         },
         {
           "id": "sair-conta",
           "pergunta": "Como eu saio da minha conta no Solis?",
-          "resposta": "Caso você deseja sair da sua conta do Feeds, siga as etapas abaixo:",    
           "passos": [
-            "Acesse seu **Perfil** pelo ícone no canto inferior direito",
-            "Toque em **\"Editar perfil\"**",
-            "Role a tela até o final e clique em **\"Sair\"**",
-            "Confirme clicando em **\"Sim\"**",
-            "**Pronto!** Você voltou para a tela de login"
+            "Acesse **\"Meu Perfil\"** no menu inferior.",
+            "Toque no botão verde **\"Editar Perfil\"**.",
+            "Role a tela de configurações até o final e toque no botão **\"Sair\"**.",
+            "Você voltará para a tela inicial de acesso."
           ]
         }
       ]
@@ -219,23 +226,23 @@
         {
           "id": "o-que-posso-postar",
           "pergunta": "Que tipo de conteúdo posso postar?",
-          "resposta": "O **Feeds** é voltado para **boas práticas agrícolas e compartilhamento de conhecimento**. Você pode postar:",
+          "resposta": "O Feeds é voltado para boas práticas agrícolas e compartilhamento de conhecimento. Você pode postar:",
           "lista": [
-            "**Boas práticas de produção da sua cadeia**",
-            "**Suas experiências e vivências no campo**",
-            "**Dicas, aprendizados e histórias reais**"
+            "Boas práticas de produção da sua cadeia.",
+            "Suas experiências e vivências no campo.",
+            "Dicas, aprendizados e histórias reais que ajudem outros produtores."
           ]
         },
         {
           "id": "o-que-nao-e-permitido",
           "pergunta": "O que não é permitido no Feeds?",
-          "resposta": "Para respeitar a integridade de todos os usuários, **NÃO** é permitido:",
+          "resposta": "Para respeitar a integridade de todos os usuários e manter a comunidade segura, **NÃO** é permitido:",
           "lista": [
-            "**Conteúdo ofensivo ou desrespeitoso a outros usuários**",
-            "**Informações falsas, perigosas ou negativas**",
-            "**Conteúdo que não tenha relação com o objetivo do Feeds**"
+            "Conteúdo ofensivo, discriminatório ou desrespeitoso a outros usuários.",
+            "Informações falsas, perigosas ou conteúdos com teor negativo.",
+            "Publicações que não tenham relação com o objetivo do Feeds."
           ],
-          "dica": "**Conteúdos que não seguirem essas regras podem ser removidos pela moderação sem aviso prévio.**"
+          "dica": "Conteúdos que não seguirem essas regras poderão ser removidos pela moderação."
         }
       ]
     },
@@ -247,10 +254,11 @@
         {
           "id": "nao-encontrei-duvida",
           "pergunta": "Não encontrei minha dúvida. E agora?",
-          "resposta": "Se sua dúvida não está na Central de Ajuda, você pode entrar em contato com o **Service Desk**. Nossa equipe recebe **dúvidas, sugestões e ajuda usuários** das ferramentas digitais da **Solidaridad**. Após o envio da sua mensagem, um analista vai responder pelo **WhatsApp** assim que possível."
+          "resposta": "Se a sua dúvida não está na Central de Ajuda, você pode entrar em contato com o nosso **Service Desk**. Nossa equipe recebe dúvidas, sugestões e ajuda os usuários de todas as ferramentas digitais da Solidaridad. Após o envio da sua mensagem, um membro da equipe irá responder pelo WhatsApp assim que possível."
         }
       ]
     }
+    
   ],
   "maisPopulares": [
     {

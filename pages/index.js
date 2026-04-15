@@ -222,7 +222,7 @@ export default function Home() {
           color: "var(--suave)",
           marginBottom: "16px",
         }}>
-          Tópicos de dúvidas
+          Categorias de dúvidas que podem te ajudar
         </h2>
 
         <div className="grid-4-colunas">
