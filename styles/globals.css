@@ -17,9 +17,7 @@
   --vermelho: #D62828;
   --header-bg: #1B1B1B;
   --footer-bg: #42C16C;
-
 }
-
 
 /* ============================================================
    CORES — DARK MODE (ativado pelo botão ou pelo sistema)
@@ -130,6 +128,17 @@ h1, h2, h3, h4 {
   }
 }
 
+/* Ícones das categorias — invertidos no dark mode para ficarem brancos */
+.icone-categoria {
+  filter: brightness(0);  /* preto no light mode */
+}
+
 [data-theme="dark"] .icone-categoria {
-  filter: invert(1);
+  filter: brightness(0) invert(1);  /* branco no dark mode */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .icone-categoria {
+    filter: brightness(0) invert(1);
+  }
 }

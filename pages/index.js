@@ -20,84 +20,6 @@ const fotos = [
   "/cenario8.webp",
 ];
 
-function VideoCard({ video }) {
-  const [tocando, setTocando] = useState(false);
-
-  return (
-    <div style={{
-      height: "100%",
-      background: "var(--branco)",
-      border: "1px solid var(--borda)",
-      borderRadius: "10px",
-      overflow: "hidden",
-      transition: "border-color 0.15s, box-shadow 0.15s",
-    }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = "var(--verde-claro)";
-        e.currentTarget.style.boxShadow = "0 2px 8px rgba(45,106,79,0.12)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = "var(--borda)";
-        e.currentTarget.style.boxShadow = "none";
-      }}
-    >
-      {tocando ? (
-        <iframe
-          width="100%"
-          src={`https://www.youtube.com/embed/${video.id}?autoplay=1`}
-          title={video.titulo}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          style={{ display: "block", aspectRatio: "9/16" }}
-        ></iframe>
-      ) : (
-        <div style={{ position: "relative", cursor: "pointer" }} onClick={() => setTocando(true)}>
-          <img
-            src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
-            alt={video.titulo}
-            style={{ width: "100%", display: "block", aspectRatio: "9/16", objectFit: "cover" }}
-          />
-          <div style={{
-            position: "absolute",
-            inset: 0,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "rgba(0,0,0,0.2)",
-          }}>
-            <div style={{
-              background: "rgba(0,0,0,0.8)",
-              borderRadius: "50%",
-              width: "36px",
-              height: "36px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}>
-              <span style={{ color: "#fff", fontSize: "14px", marginLeft: "2px" }}>▶</span>
-            </div>
-          </div>
-        </div>
-      )}
-      <div style={{ padding: "10px 12px", height: "48px" }}>
-        <p style={{
-          fontFamily: "Sora, sans-serif",
-          fontWeight: 600,
-          fontSize: "12px",
-          color: "var(--escuro)",
-          lineHeight: 1.4,
-          margin: 0,
-          textWrap: "balance",
-          wordBreak: "break-word"
-        }}>
-          {video.titulo}
-        </p>
-      </div>
-    </div>
-  );
-}
-
 export default function Home() {
   const [busca, setBusca] = useState("");
   const [fotoAtual, setFotoAtual] = useState(0);
@@ -124,29 +46,28 @@ export default function Home() {
     return { ...perg, categoriaId };
   });
 
-  // Base compartilhada entre título e subtítulo
+  // Base compartilhada
   const tagBase = {
     padding: "1px 6px",
     display: "inline",
-    color: "#f9f9f9",
     boxDecorationBreak: "clone",
     WebkitBoxDecorationBreak: "clone",
   };
 
-  // Título — fundo verde
+  // Título — fundo verde sólido
   const tagTitulo = {
     ...tagBase,
-    background: "rgba(66, 193, 108, 0.72)",
-    fontWeight: "600",
-    color: "#ffffff"
+    background: "#42C16C",
+    color: "#ffffff",
+    fontWeight: "700",
   };
 
-  // Subtítulo — fundo cinza escuro + bold
+  // Subtítulo — fundo preto sólido
   const tagSubtitulo = {
     ...tagBase,
-    background: "rgba(73, 75, 74, 0.77)",
+    background: "#1B1B1B",
+    color: "#ffffff",
     fontWeight: "500",
-    color: "#ffffff"
   };
 
   return (
@@ -170,13 +91,20 @@ export default function Home() {
               backgroundSize: "cover",
               backgroundPosition: "center",
               opacity: i === fotoAtual ? 1 : 0,
-              transform: i === fotoAtual ? "scale(1)" : "scale(1.1)", 
-              transition: "opacity 0.5s ease-in-out, transform 0.5s ease-out"
+              transition: "opacity 0.8s ease-in-out",
             }}
           />
         ))}
 
-        {/* Conteúdo por cima das imagens */}
+        {/* Overlay preto transparente sobre todas as fotos */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          background: "rgba(0, 0, 0, 0.40)",
+          zIndex: 5,
+        }} />
+
+        {/* Conteúdo por cima do overlay */}
         <div style={{
           position: "relative",
           zIndex: 10,
@@ -212,7 +140,7 @@ export default function Home() {
             ‹ Voltar
           </a>
 
-          {/* Título — fundo verde */}
+          {/* Título — fundo verde sólido */}
           <h1 style={{
             fontFamily: "Sora, sans-serif",
             fontSize: "clamp(20px, 5vw, 28px)",
@@ -223,7 +151,7 @@ export default function Home() {
             <span style={tagTitulo}>Como podemos te ajudar?</span>
           </h1>
 
-          {/* Subtítulo — fundo cinza escuro, bold */}
+          {/* Subtítulo — fundo preto sólido, duas linhas */}
           <div style={{
             display: "flex",
             flexDirection: "column",
@@ -396,25 +324,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* ── VÍDEOS QUE PODEM TE AJUDAR ── */}
-        <h2 style={{
-          fontFamily: "Sora, sans-serif",
-          fontSize: "11px",
-          fontWeight: 700,
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          color: "var(--suave)",
-          marginBottom: "16px",
-          marginTop: "48px",
-        }}>
-          Vídeos que podem te ajudar
-        </h2>
-
-        <div className="grid-4-colunas">
-          {faqData.videos.map((video) => (
-            <VideoCard key={video.id} video={video} />
-          ))}
-        </div>
       </div>
     </Layout>
   );
